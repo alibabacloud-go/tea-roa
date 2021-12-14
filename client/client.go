@@ -381,6 +381,7 @@ func (client *Client) DoRequest(version *string, protocol *string, method *strin
 				"headers": response_.Headers,
 				"body":    result,
 			}, &_result)
+			_result["_headers"] = response_.Headers
 			return _result, _err
 		}()
 		if !tea.BoolValue(tea.Retryable(_err)) {
@@ -530,6 +531,7 @@ func (client *Client) DoRequestWithAction(action *string, version *string, proto
 				"headers": response_.Headers,
 				"body":    result,
 			}, &_result)
+			_result["_headers"] = response_.Headers
 			return _result, _err
 		}()
 		if !tea.BoolValue(tea.Retryable(_err)) {
@@ -677,6 +679,7 @@ func (client *Client) DoRequestWithForm(version *string, protocol *string, metho
 				"headers": response_.Headers,
 				"body":    result,
 			}, &_result)
+			_result["_headers"] = response_.Headers
 			return _result, _err
 		}()
 		if !tea.BoolValue(tea.Retryable(_err)) {
