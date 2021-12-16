@@ -372,6 +372,7 @@ func (client *Client) DoRequest(version *string, protocol *string, method *strin
 					"statusCode": tea.IntValue(response_.StatusCode),
 					"message":    "code: " + tea.ToString(tea.IntValue(response_.StatusCode)) + ", " + tea.ToString(DefaultAny(err["Message"], err["message"])) + " request id: " + tea.ToString(DefaultAny(err["RequestId"], err["requestId"])),
 					"data":       err,
+					"_headers":   response_.Headers,
 				})
 				return _result, _err
 			}
@@ -522,6 +523,7 @@ func (client *Client) DoRequestWithAction(action *string, version *string, proto
 					"statusCode": tea.IntValue(response_.StatusCode),
 					"message":    "code: " + tea.ToString(tea.IntValue(response_.StatusCode)) + ", " + tea.ToString(DefaultAny(err["Message"], err["message"])) + " request id: " + tea.ToString(DefaultAny(err["RequestId"], err["requestId"])),
 					"data":       err,
+					"_headers":   response_.Headers,
 				})
 				return _result, _err
 			}
@@ -670,6 +672,7 @@ func (client *Client) DoRequestWithForm(version *string, protocol *string, metho
 					"statusCode": tea.IntValue(response_.StatusCode),
 					"message":    "code: " + tea.ToString(tea.IntValue(response_.StatusCode)) + ", " + tea.ToString(DefaultAny(err["Message"], err["message"])) + " request id: " + tea.ToString(DefaultAny(err["RequestId"], err["requestId"])),
 					"data":       err,
+					"_headers":   response_.Headers,
 				})
 				return _result, _err
 			}
