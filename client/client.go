@@ -241,6 +241,7 @@ func (client *Client) Init(config *Config) (_err error) {
 	client.HttpProxy = config.HttpProxy
 	client.HttpsProxy = config.HttpsProxy
 	client.MaxIdleConns = config.MaxIdleConns
+	client.UserAgent = config.UserAgent
 	return nil
 }
 
